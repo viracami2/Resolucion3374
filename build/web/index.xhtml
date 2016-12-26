@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+   
+    <h:head>
+        <title>ResolucioN 3374</title>
+    </h:head>
+    <h:body>
+      
+                       
+                       
+                       <p:accordionPanel>
+                       <p:tab title="  US  ">
+        
+ 
+      <h:form> 
+       
+            
+                <p:messages />
+                <h:panelGrid columns="2" columnClasses="label, value">
+                    <h:outputText value="Tipo Identificacion *" />
+                    <p:selectOneMenu id="console" value="#{uSController.us.tipo_iden}" style="width:180px">
+                        <f:selectItem itemLabel="Selecciona una" itemValue="" />
+                        <f:selectItem itemLabel="Cedula De Ciudadania" itemValue="CC" />
+                        <f:selectItem itemLabel="Cedula De Extranjeria" itemValue="CE" />
+                        <f:selectItem itemLabel="Pasaporte" itemValue="PA" />
+                        <f:selectItem itemLabel="Registro Civil" itemValue="RC" />
+                        <f:selectItem itemLabel="Tarjeta de Identidad" itemValue="TI" />
+                        <f:selectItem itemLabel="Adulto Sin Identificacion" itemValue="AS" />
+                        <f:selectItem itemLabel="Menor Sin Identificacion" itemValue="MS" />
+                        <f:selectItem itemLabel="Numero Unico De Identificacion" itemValue="NU" />
+                        </p:selectOneMenu>
+
+                    <h:outputText value="Numero Identificacion *" />
+                    <p:inputText value="#{uSController.us.numero_iden}" required="true" label="Firstname"/>
+                    
+                    <h:outputText value="Codigo Entidad Administrativa *" />
+                    <p:inputText value="#{uSController.us.cod_enti_adm}" required="true" label="Firstname"/>
+                    
+                    <h:outputText value="Tipo De Usuario *" />
+                    <p:selectOneMenu id="console_tipo" value="#{uSController.us.tipo_usu}" style="width:180px">
+                        <f:selectItem itemLabel="Selecciona una" itemValue="" />
+                        <f:selectItem itemLabel="Contributivo" itemValue="1" />
+                        <f:selectItem itemLabel="Subsidiado" itemValue="2" />
+                        <f:selectItem itemLabel="Vinculado" itemValue="3" />
+                        <f:selectItem itemLabel="Particular" itemValue="4" />
+                        <f:selectItem itemLabel="Otro" itemValue="5" />
+                        </p:selectOneMenu>
+                    
+                    <h:outputText value="Primer Apellido *" />
+                    <p:inputText value="#{uSController.us.apellido1}" />
+                    
+                    <h:outputText value="Segundo Apellido *" />
+                    <p:inputText value="#{uSController.us.apellido2}" />
+                    
+                    <h:outputText value="Primer Nombre *" />
+                    <p:inputText value="#{uSController.us.nombre1}" required="true" label="Firstname"/>
+                    
+                    <h:outputText value=" Segundo Nombre *" />
+                    <p:inputText value="#{uSController.us.nombre2}" required="true" label="Lastname"/>
+                    
+                    
+                    <h:panelGrid columns="3" columnClasses="label, value">
+                        <h:outputText value=" Edad *      "    style="width: 140px" />
+                    <p:inputText value="#{uSController.us.edad}" required="true" label="Lastname" style="width:70px"/>
+                        <p:selectOneMenu id="console_edad" value="#{uSController.us.medida_edad}" style="width:70px">
+                        <f:selectItem itemLabel="Años" itemValue="1" />
+                        <f:selectItem itemLabel="Meses" itemValue="2" />
+                        <f:selectItem itemLabel="Dias" itemValue="3" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                    <h:outputText value=" " />
+                    <h:outputText value=" Sexo *" />
+                    <p:selectOneMenu id="console_sexo" value="#{uSController.us.sexo}" style="width:130px">
+                        <f:selectItem itemLabel="Masculino" itemValue="m" />
+                        <f:selectItem itemLabel="Femenino" itemValue="f" />
+                    </p:selectOneMenu>
+                                      
+                    <h:outputText value=" Codigo Departamento *" />
+                    <p:inputText value="#{uSController.us.cod_depar}" required="true" label="Lastname"/>
+                    
+                    <h:outputText value=" Codigo Municipio *" />
+                    <p:inputText value="#{uSController.us.cod_muni}" required="true" label="Lastname"/>
+                    
+                    <h:outputText value=" Zona De Residencia *" />
+                    <p:selectOneMenu id="console_resi" value="#{uSController.us.medida_edad}" style="width:175px">
+                        <f:selectItem itemLabel="Urbana" itemValue="U" />
+                        <f:selectItem itemLabel="Rural" itemValue="R" />
+                        
+                    </p:selectOneMenu>
+                    
+                     
+                                       
+                    
+                                   </h:panelGrid>
+                
+            
+            <h:commandButton value="registrar" action="#{uSController.registrar()}" />
+       
+ </h:form>
+       
+
+    
+        
+            </p:tab>
+                           
+        
+                           <p:tab title="  GENERAR TXT ">
+                            
+            
+                                    <p:tab title="  GENERAR  TXT DE US ">
+                                         <h:form> 
+                                        <h:commandButton value="registrar" action="#{uSController.generar()}" />
+                                             </h:form>    
+                                    </p:tab>
+                               
+                           </p:tab>
+       
+                       
+                       
+        </p:accordionPanel>
+ 
+               
+   
+            
+    </h:body>       
+        </html>
+
+
