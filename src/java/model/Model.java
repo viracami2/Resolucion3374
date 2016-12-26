@@ -139,31 +139,31 @@ public class Model implements Serializable{
 //	
 //		/*---------------METODOS DE LAS MATRICULAS ----------------------*/
 
-	public void guardarEstudiante(Estudiante est)throws SQLException{
-
-		if(!isConnect())
-	 		throw new SQLException("Sin Conexion");
-
-	
-	 	PreparedStatement pstmt=null;
-
-	 	try{
-
-	 		pstmt=con.prepareStatement("insert into estudiante values (?,?,?,?,?)");
-	 		pstmt.setString(1,est.getCodigo());
-	 		pstmt.setString(3,est.getNombre());
-	 		pstmt.setString(4,est.getApelllido());
-	 		pstmt.setString(2,est.getIdentificacion());
-                        pstmt.setString(5,est.getPrograma());
-	 			 				
-	 		pstmt.executeUpdate();
-
-		}finally {
-	 		if(pstmt!=null)
-	 		   pstmt.close();
-	 	}
-	}
+//	public void guardarEstudiante(Estudiante est)throws SQLException{
+//
+//		if(!isConnect())
+//	 		throw new SQLException("Sin Conexion");
+//
 //	
+//	 	PreparedStatement pstmt=null;
+//
+//	 	try{
+//
+//	 		pstmt=con.prepareStatement("insert into estudiante values (?,?,?,?,?)");
+//	 		pstmt.setString(1,est.getCodigo());
+//	 		pstmt.setString(3,est.getNombre());
+//	 		pstmt.setString(4,est.getApelllido());
+//	 		pstmt.setString(2,est.getIdentificacion());
+//                        pstmt.setString(5,est.getPrograma());
+//	 			 				
+//	 		pstmt.executeUpdate();
+//
+//		}finally {
+//	 		if(pstmt!=null)
+//	 		   pstmt.close();
+//	 	}
+//	}
+////	
 //	////////////////////////////////////////////////
 //	
 		public List listEstudiantes()throws SQLException{
@@ -181,13 +181,13 @@ public class Model implements Serializable{
                    lista_estudiantes = new LinkedList();
 		   
 			while(result.next()){
-				Estudiante a = new Estudiante();
-                                a.setCodigo(result.getString(1));
-                                a.setIdentificacion(result.getString(2));
-                                a.setNombre(result.getString(3));
-                                a.setApelllido(result.getString(4));
-                              	a.setPrograma(result.getString(5));
-                                this.lista_estudiantes.add(a);
+//				Estudiante a = new Estudiante();
+//                                a.setCodigo(result.getString(1));
+//                                a.setIdentificacion(result.getString(2));
+//                                a.setNombre(result.getString(3));
+//                                a.setApelllido(result.getString(4));
+//                              	a.setPrograma(result.getString(5));
+//                                this.lista_estudiantes.add(a);
 				//this.addAsignatura(a);
 				
 			}
@@ -204,50 +204,50 @@ public class Model implements Serializable{
                 
                 
                 
-                public Nota [] buscarNotas(String nom)throws SQLException{
-                    Nota notas =new Nota();
-                Nota  notass [] =new Nota [100];
-                String nom_per;
-                String nom_asig;
-                String nota;
-                int i=0;
-                //
-                if(!isConnect())
-	 		throw new SQLException("Sin Conexion");
-
-		PreparedStatement pstmt=null;
-		ResultSet result=null;
-               
-		try{	
-                    
-pstmt=con.prepareStatement(
-"select persona.nombre ,asignatura.nombre ,nota.nota from asignatura,nota,persona where  codigo_est='"+nom+"' and codigo=codigo_asig and codigo_est =codigo_per; ");
-		 
-		   result=pstmt.executeQuery();			   
-                 	
-			while(result.next()){
-				
-                                notas.setNom_per(result.getString(1));
-                                notas.setNom_asig( result.getString(2));
-                                notas.setNota(nota= result.getString(3));
-                             notass [i]=notas;
-                             i++;
-                        }
-                        
-				
-		}catch(Exception e) {
-                    System.out.println(e);
-				if(result!=null)
-					result.close();
-	 			  	if(pstmt!=null)
-	 			  		 pstmt.close();
-	    }
-                //
-                
-                return notass;
-                
-                }
-	
+//                public Nota [] buscarNotas(String nom)throws SQLException{
+//                    Nota notas =new Nota();
+//                Nota  notass [] =new Nota [100];
+//                String nom_per;
+//                String nom_asig;
+//                String nota;
+//                int i=0;
+//                //
+//                if(!isConnect())
+//	 		throw new SQLException("Sin Conexion");
+//
+//		PreparedStatement pstmt=null;
+//		ResultSet result=null;
+//               
+//		try{	
+//                    
+//pstmt=con.prepareStatement(
+//"select persona.nombre ,asignatura.nombre ,nota.nota from asignatura,nota,persona where  codigo_est='"+nom+"' and codigo=codigo_asig and codigo_est =codigo_per; ");
+//		 
+//		   result=pstmt.executeQuery();			   
+//                 	
+//			while(result.next()){
+//				
+//                                notas.setNom_per(result.getString(1));
+//                                notas.setNom_asig( result.getString(2));
+//                                notas.setNota(nota= result.getString(3));
+//                             notass [i]=notas;
+//                             i++;
+//                        }
+//                        
+//				
+//		}catch(Exception e) {
+//                    System.out.println(e);
+//				if(result!=null)
+//					result.close();
+//	 			  	if(pstmt!=null)
+//	 			  		 pstmt.close();
+//	    }
+//                //
+//                
+//                return notass;
+//                
+//                }
+//	
 //
 //
 //                         LLAMADO DE USUARIOS
